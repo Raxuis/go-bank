@@ -3,6 +3,8 @@ package main
 import (
 	"encoding/json"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 func WriteJSON(w http.ResponseWriter, status int, v any) error {
@@ -37,9 +39,11 @@ func NewAPIServer(listenAddr string) *APIServer {
 }
 
 func (s *APIServer) Run() {
-	// router := mux.NewRouter()
+	router := mux.NewRouter()
 
-	// router.HandleFunc("/account", s.handleAccount)
+	router.HandleFunc("/account", makeHTTPHandleFunc(s.handleAccount))
+
+	http.ListenAndServe(s.listenAddr, router)
 }
 
 func (s *APIServer) handleAccount(w http.ResponseWriter, r *http.Request) error {
