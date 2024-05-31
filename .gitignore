@@ -23,3 +23,6 @@ go.work.sum
 
 # Mac filesystem
 .DS_Store
+
+# Bins
+bin/
