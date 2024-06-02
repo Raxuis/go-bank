@@ -42,8 +42,8 @@ A bank api to learn Golang and PostgresSQL.
 
 ## :sparkles: Features
 
-:heavy_check_mark: Create an account
-:heavy_check_mark: Get account by id
+:heavy_check_mark: Create an account\
+:heavy_check_mark: Get account by id\
 :heavy_check_mark: Get all accounts
 
 ## :rocket: Technologies
